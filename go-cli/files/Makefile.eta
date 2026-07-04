@@ -6,9 +6,6 @@ test:
 lint:
 	golangci-lint run
 
-actionlint:
-	actionlint .github/workflows/*.yml
-
 build:
 	go build -o ./dist/<%= it.commandName %> .
 
