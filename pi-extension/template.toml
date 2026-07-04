@@ -1,0 +1,95 @@
+name = "Pi Extension"
+description = "Pi package with a TypeScript extension entrypoint"
+
+[[variables]]
+name = "description"
+type = "string"
+prompt = "Description"
+default = "A Pi package with a TypeScript extension"
+
+[[variables]]
+name = "packageName"
+type = "string"
+prompt = "npm package name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "githubOwner"
+type = "string"
+prompt = "GitHub owner"
+default = "{{ system.defaults.githubOwner }}"
+required = true
+
+[[variables]]
+name = "repoName"
+type = "string"
+prompt = "GitHub repository name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "extensionId"
+type = "string"
+prompt = "Pi extension id"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "displayName"
+type = "string"
+prompt = "Display name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "commandName"
+type = "string"
+prompt = "Pi slash command name"
+default = "{{ extensionId }}"
+required = true
+
+[[variables]]
+name = "commandDescription"
+type = "string"
+prompt = "Pi slash command description"
+default = "Show {{ displayName }} status"
+required = true
+
+[[variables]]
+name = "authorName"
+type = "string"
+prompt = "Author name"
+default = "{{ system.defaults.authorName }}"
+required = true
+
+[[variables]]
+name = "authorEmail"
+type = "string"
+prompt = "Author email"
+default = "{{ system.defaults.authorEmail }}"
+
+[[variables]]
+name = "authorUrl"
+type = "string"
+prompt = "Author URL"
+default = "{{ system.defaults.authorUrl }}"
+
+[[variables]]
+name = "licensee"
+type = "string"
+prompt = "MIT licensee"
+default = "{{ system.defaults.licensee }}"
+required = true
+
+[[commands]]
+name = "Install dependencies"
+run = "npm install"
+
+[[commands]]
+name = "Typecheck"
+run = "npm run check"
+
+[[commands]]
+name = "Test"
+run = "npm test"

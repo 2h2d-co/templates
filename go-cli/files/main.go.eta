@@ -1,0 +1,19 @@
+// Package main contains the <%= it.commandName %> command-line entry point.
+package main
+
+import (
+  "fmt"
+  "os"
+
+  "<%= it.modulePath %>/internal/<%= it.goPackageName %>"
+)
+
+var version = "dev"
+
+func main() {
+  cmd := <%= it.goPackageName %>.NewRootCommand(version)
+  if err := cmd.Execute(); err != nil {
+    fmt.Fprintln(os.Stderr, "Error:", err.Error())
+    os.Exit(1)
+  }
+}

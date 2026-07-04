@@ -1,0 +1,69 @@
+name = "Go CLI"
+description = "Go Cobra command-line project based on the reusable structure from dots"
+
+[[variables]]
+name = "description"
+type = "string"
+prompt = "Description"
+default = "A Go command-line application"
+
+[[variables]]
+name = "githubOwner"
+type = "string"
+prompt = "GitHub owner"
+default = "{{ system.defaults.githubOwner }}"
+required = true
+
+[[variables]]
+name = "repoName"
+type = "string"
+prompt = "GitHub repository name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "modulePath"
+type = "string"
+prompt = "Go module path"
+default = "github.com/{{ githubOwner }}/{{ repoName }}"
+required = true
+
+[[variables]]
+name = "commandName"
+type = "string"
+prompt = "CLI command name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "goPackageName"
+type = "string"
+prompt = "Internal Go package name"
+default = "app"
+required = true
+
+[[variables]]
+name = "authorName"
+type = "string"
+prompt = "Author name"
+default = "{{ system.defaults.authorName }}"
+required = true
+
+[[variables]]
+name = "licensee"
+type = "string"
+prompt = "MIT licensee"
+default = "{{ system.defaults.licensee }}"
+required = true
+
+[[commands]]
+name = "Tidy Go modules"
+run = "go mod tidy"
+
+[[commands]]
+name = "Format Go files"
+run = "gofmt -w ."
+
+[[commands]]
+name = "Test"
+run = "go test ./..."

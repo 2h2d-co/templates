@@ -1,0 +1,8 @@
+dist/
+.DS_Store
+.env
+
+# Local agent/project notes
+DESIRES.md
+LEARNINGS.md
+MISTAKES.md

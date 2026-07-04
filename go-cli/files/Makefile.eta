@@ -1,0 +1,26 @@
+.PHONY: test lint build clean completions man
+
+test:
+	go test ./...
+
+lint:
+	golangci-lint run
+
+actionlint:
+	actionlint .github/workflows/*.yml
+
+build:
+	go build -o ./dist/<%= it.commandName %> .
+
+completions: build
+	mkdir -p ./dist/completions
+	./dist/<%= it.commandName %> completion bash > ./dist/completions/<%= it.commandName %>.bash
+	./dist/<%= it.commandName %> completion zsh > ./dist/completions/_<%= it.commandName %>
+	./dist/<%= it.commandName %> completion fish > ./dist/completions/<%= it.commandName %>.fish
+
+man: build
+	mkdir -p ./dist/man
+	./dist/<%= it.commandName %> man ./dist/man
+
+clean:
+	rm -rf ./dist

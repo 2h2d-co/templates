@@ -1,0 +1,53 @@
+{
+  "name": <%= it.json(it.packageName) %>,
+  "version": "0.0.1-alpha.0",
+  "description": <%= it.json(it.description) %>,
+  "homepage": "https://github.com/<%= it.githubOwner %>/<%= it.repoName %>#readme",
+  "bugs": {
+    "url": "https://github.com/<%= it.githubOwner %>/<%= it.repoName %>/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": <%= it.json(it.authorName) %>,
+    "email": <%= it.json(it.authorEmail) %>,
+    "url": <%= it.json(it.authorUrl) %>
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= it.githubOwner %>/<%= it.repoName %>.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test --test-concurrency=1 test/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "fmt": "oxfmt",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
+    "oxlint-tsgolint": "^0.23.0",
+    "typescript": "^6"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

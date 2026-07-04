@@ -1,0 +1,7 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { createGreeting } from "../src/core.ts";
+
+void test("createGreeting greets by name", () => {
+  assert.equal(createGreeting("<%= it.projectName %>"), "Hello, <%= it.projectName %>!");
+});

@@ -1,0 +1,16 @@
+# <%= it.projectName %>
+
+<%= it.description %>
+
+## Usage
+
+```bash
+go run . hello --name world
+```
+
+## Development
+
+```bash
+go test ./...
+make build
+```

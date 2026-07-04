@@ -1,0 +1,95 @@
+package <%= it.goPackageName %>
+
+import (
+  "fmt"
+  "os"
+
+  "github.com/spf13/cobra"
+  "github.com/spf13/cobra/doc"
+)
+
+// App holds process-wide CLI settings shared by <%= it.commandName %> commands.
+type App struct {
+  version string
+}
+
+// NewRootCommand builds the root <%= it.commandName %> command tree.
+func NewRootCommand(version string) *cobra.Command {
+  app := &App{version: version}
+
+  root := &cobra.Command{
+    Use:           "<%= it.commandName %>",
+    Short:         "<%= it.description %>",
+    Long:          "<%= it.description %>",
+    Version:       version,
+    SilenceUsage:  true,
+    SilenceErrors: true,
+  }
+
+  root.AddCommand(app.newHelloCommand())
+  root.AddCommand(newCompletionCommand(root))
+  root.AddCommand(app.newManCommand(root))
+
+  return root
+}
+
+func (a *App) newHelloCommand() *cobra.Command {
+  var name string
+  cmd := &cobra.Command{
+    Use:   "hello",
+    Short: "Print a greeting",
+    RunE: func(cmd *cobra.Command, _ []string) error {
+      if name == "" {
+        name = "world"
+      }
+      _, err := fmt.Fprintf(cmd.OutOrStdout(), "Hello, %s!\n", name)
+      return err
+    },
+  }
+  cmd.Flags().StringVar(&name, "name", "world", "name to greet")
+  return cmd
+}
+
+func newCompletionCommand(root *cobra.Command) *cobra.Command {
+  return &cobra.Command{
+    Use:   "completion [bash|zsh|fish|powershell]",
+    Short: "Generate shell completion scripts",
+    Long:  "Generate shell completion scripts. Source the output from your shell startup file or install it in the appropriate completions directory.",
+    Args:  cobra.ExactArgs(1),
+    RunE: func(cmd *cobra.Command, args []string) error {
+      switch args[0] {
+      case "bash":
+        return root.GenBashCompletionV2(cmd.OutOrStdout(), true)
+      case "zsh":
+        return root.GenZshCompletion(cmd.OutOrStdout())
+      case "fish":
+        return root.GenFishCompletion(cmd.OutOrStdout(), true)
+      case "powershell":
+        return root.GenPowerShellCompletion(cmd.OutOrStdout())
+      default:
+        return fmt.Errorf("unsupported shell %q", args[0])
+      }
+    },
+  }
+}
+
+func (a *App) newManCommand(root *cobra.Command) *cobra.Command {
+  return &cobra.Command{
+    Use:   "man DIR",
+    Short: "Generate man pages",
+    Long:  "Generate roff man pages for <%= it.commandName %> and its subcommands into DIR.",
+    Args:  cobra.ExactArgs(1),
+    RunE: func(_ *cobra.Command, args []string) error {
+      if err := os.MkdirAll(args[0], 0o750); err != nil {
+        return err
+      }
+      header := &doc.GenManHeader{
+        Title:   "<%= it.commandName.toUpperCase() %>",
+        Section: "1",
+        Source:  "<%= it.commandName %> " + a.version,
+        Manual:  "<%= it.commandName %> Manual",
+      }
+      return doc.GenManTree(root, header, args[0])
+    },
+  }
+}

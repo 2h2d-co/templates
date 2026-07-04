@@ -1,0 +1,67 @@
+name = "TypeScript"
+description = "TypeScript ESM project with npm, TypeScript, oxlint, and oxfmt"
+
+[[variables]]
+name = "description"
+type = "string"
+prompt = "Description"
+default = "A TypeScript project"
+
+[[variables]]
+name = "packageName"
+type = "string"
+prompt = "npm package name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "githubOwner"
+type = "string"
+prompt = "GitHub owner"
+default = "{{ system.defaults.githubOwner }}"
+required = true
+
+[[variables]]
+name = "repoName"
+type = "string"
+prompt = "GitHub repository name"
+default = "{{ projectName }}"
+required = true
+
+[[variables]]
+name = "authorName"
+type = "string"
+prompt = "Author name"
+default = "{{ system.defaults.authorName }}"
+required = true
+
+[[variables]]
+name = "authorEmail"
+type = "string"
+prompt = "Author email"
+default = "{{ system.defaults.authorEmail }}"
+
+[[variables]]
+name = "authorUrl"
+type = "string"
+prompt = "Author URL"
+default = "{{ system.defaults.authorUrl }}"
+
+[[variables]]
+name = "licensee"
+type = "string"
+prompt = "MIT licensee"
+default = "{{ system.defaults.licensee }}"
+required = true
+
+[[commands]]
+name = "Install dependencies"
+run = "npm install"
+
+[[commands]]
+name = "Build"
+run = "npm run build"
+
+[[commands]]
+name = "Test"
+run = "npm test"

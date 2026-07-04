@@ -1,0 +1,11 @@
+# <%= it.projectName %>
+
+<%= it.description %>
+
+## Development
+
+```bash
+npm install
+npm run check
+npm run build
+```

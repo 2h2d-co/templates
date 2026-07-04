@@ -1,0 +1,55 @@
+{
+  "name": <%= it.json(it.packageName) %>,
+  "version": "0.0.1-alpha.0",
+  "description": <%= it.json(it.description) %>,
+  "keywords": [
+    "pi-package"
+  ],
+  "homepage": "https://github.com/<%= it.githubOwner %>/<%= it.repoName %>#readme",
+  "bugs": {
+    "url": "https://github.com/<%= it.githubOwner %>/<%= it.repoName %>/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": <%= it.json(it.authorName) %>,
+    "email": <%= it.json(it.authorEmail) %>,
+    "url": <%= it.json(it.authorUrl) %>
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= it.githubOwner %>/<%= it.repoName %>.git"
+  },
+  "files": [
+    "extensions/<%= it.extensionId %>/index.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "check": "tsc -p tsconfig.json",
+    "test": "npm run check && node --test --test-concurrency=1 test/*.test.ts",
+    "fmt": "oxfmt",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.80.3",
+    "@types/node": "22.20.0",
+    "oxfmt": "0.56.0",
+    "oxlint": "1.71.0",
+    "oxlint-tsgolint": "0.23.0",
+    "typescript": "6.0.3"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/<%= it.extensionId %>/index.ts"
+    ]
+  }
+}

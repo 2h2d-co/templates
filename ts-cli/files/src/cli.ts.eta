@@ -1,0 +1,8 @@
+import { createGreeting } from "./core.ts";
+
+export function run(argv: string[] = process.argv.slice(2)): void {
+  const [name = "world"] = argv;
+  console.log(createGreeting(name));
+}
+
+run();

@@ -1,0 +1,23 @@
+# <%= it.projectName %>
+
+<%= it.description %>
+
+This is a Pi package. It registers this slash command:
+
+```txt
+/<%= it.commandName %>
+```
+
+## Development
+
+```bash
+npm install
+npm run check
+npm test
+```
+
+## Try locally
+
+```bash
+pi -e ./extensions/<%= it.extensionId %>/index.ts
+```
