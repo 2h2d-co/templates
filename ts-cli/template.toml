@@ -55,10 +55,10 @@ prompt = "Author URL"
 default = "{{ system.defaults.authorUrl }}"
 
 [[variables]]
-name = "licensee"
+name = "licensor"
 type = "string"
-prompt = "MIT licensee"
-default = "{{ system.defaults.licensee }}"
+prompt = "MIT licensor"
+default = "{{ system.defaults.licensor }}"
 required = true
 
 [[commands]]
