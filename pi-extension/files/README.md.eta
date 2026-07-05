@@ -21,3 +21,7 @@ npm test
 ```bash
 pi -e ./extensions/<%= it.extensionId %>/index.ts
 ```
+
+## Release staging
+
+The GitHub Actions workflow stages npm releases when a `v*` tag is pushed. The tag must match `package.json` version and point at a commit whose subject is `release: v<version>`.
