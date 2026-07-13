@@ -18,7 +18,7 @@ jobs:
     environment: npm-publish
     permissions:
       contents: read
-      id-token: write
+      id-token: write # Required for npm trusted publishing provenance.
 
     steps:
       - name: Check out repository
@@ -34,15 +34,15 @@ jobs:
           install_args: --locked
           cache: false
 
+      - name: Validate release and derive npm dist-tag
+        id: release
+        run: node ./scripts/ci-publish-checks.ts
+
       - name: Install dependencies
         run: npm ci
 
       - name: Test
         run: npm test
-
-      - name: Validate release and derive npm dist-tag
-        id: release
-        run: node ./scripts/ci-publish-checks.ts
 
       - name: Stage package on npm
         run: npm stage publish --tag "$NPM_DIST_TAG" --allow-directory=all --provenance
