@@ -1,5 +1,11 @@
 [tools]
+hk = { version = "1.48.0", postinstall = "hk install --mise" }
+cocogitto = "7.0.0"
+actionlint = "1.7.12"
+zizmor = "1.26.1"
 go = "1.26.4"
+golangci-lint = "latest"
+goreleaser = "latest"
 
 [settings]
 lockfile = true

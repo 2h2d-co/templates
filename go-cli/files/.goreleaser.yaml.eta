@@ -1,0 +1,19 @@
+version: 2
+project_name: "<%= it.projectName %>"
+builds:
+  - main: .
+    binary: "<%= it.commandName %>"
+    env: [CGO_ENABLED=0]
+    goos: [darwin, linux]
+    goarch: [arm64, amd64]
+archives:
+  - formats: [tar.gz]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+checksum:
+  name_template: checksums.txt
+changelog:
+  use: github
+release:
+  github:
+    owner: "<%= it.githubOwner %>"
+    name: "<%= it.repoName %>"
