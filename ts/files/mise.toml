@@ -3,7 +3,7 @@ hk = { version = "1.48.0", postinstall = "hk install --mise" }
 cocogitto = "7.0.0"
 actionlint = "1.7.12"
 zizmor = "1.26.1"
-node = "24.18.0"
+node = "22"
 
 [settings]
 lockfile = true
