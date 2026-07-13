@@ -83,6 +83,10 @@ default = "{{ system.defaults.licensor }}"
 required = true
 
 [[commands]]
+name = "Install development tools"
+run = "mise trust && mise install"
+
+[[commands]]
 name = "Install dependencies"
 run = "npm install"
 

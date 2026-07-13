@@ -103,6 +103,12 @@ function deriveNpmTag(version: string): string {
     );
   }
 
+  if (firstIdentifier === "latest") {
+    throw new Error(
+      `Refusing prerelease version "${version}" because it derives the reserved "latest" npm dist-tag.`,
+    );
+  }
+
   return firstIdentifier;
 }
 
