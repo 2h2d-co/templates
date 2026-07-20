@@ -27,22 +27,22 @@
   ],
   "type": "module",
   "scripts": {
-    "check": "tsc -p tsconfig.json",
-    "test": "npm run check && node --test --test-concurrency=1 test/*.test.ts",
+    "check": "hk check --all --check",
+    "test": "node --test --test-concurrency=1 test/*.test.ts",
     "fmt": "oxfmt",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix"
   },
   "devDependencies": {
-    "@earendil-works/pi-coding-agent": "0.80.3",
-    "@types/node": "22.20.0",
-    "oxfmt": "0.56.0",
-    "oxlint": "1.71.0",
-    "oxlint-tsgolint": "0.23.0",
-    "typescript": "6.0.3"
+    "@earendil-works/pi-coding-agent": "0.80.10",
+    "@types/node": "22.20.1",
+    "oxfmt": "0.58.0",
+    "oxlint": "1.73.0",
+    "oxlint-tsgolint": "0.24.0",
+    "typescript": "7.0.2"
   },
   "peerDependencies": {
-    "@earendil-works/pi-coding-agent": "*"
+    "@earendil-works/pi-coding-agent": ">=0.80.10 <0.81.0"
   },
   "engines": {
     "node": ">=22.19.0"

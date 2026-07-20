@@ -38,6 +38,8 @@ jobs:
         run: npm ci
       - name: Check
         run: npm run check
+      - name: Test
+        run: npm test
       - name: Build
         run: npm run build
       - name: Stage package on npm
