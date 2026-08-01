@@ -1,10 +1,10 @@
 [tools]
-hk = { version = "1.51.0", postinstall = "hk install --mise" }
+hk = { version = "1.53.0", postinstall = "hk install --mise" }
 betterleaks = "latest"
 cocogitto = "7.0.0"
 actionlint = "1.7.12"
-zizmor = "1.26.1"
-go = "1.26.4"
+zizmor = "1.28.0"
+go = "1.26.5"
 golangci-lint = "latest"
 goreleaser = "latest"
 
