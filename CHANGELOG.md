@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Replace Gitleaks with Betterleaks in generated project hooks and toolchains.
+
 - Add npm release staging workflow to the `pi-extension` template.
 - Update the TypeScript templates to Node.js 22.19, TypeScript 7, and exactly pinned Node and Oxc tooling.
 - Standardize TypeScript template quality gates on hk, keep behavioral tests separate, and enforce the seven-day npm release-age policy.
