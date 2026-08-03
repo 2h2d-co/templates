@@ -14,3 +14,7 @@ go run . hello --name world
 go test ./...
 make build
 ```
+
+## Releases
+
+The GitHub Actions workflow publishes a release when a `v*` tag is pushed. Release tags must be lightweight tags. Create one with `git tag v<version>`; do not use `git tag -a`, `git tag -s`, `git tag -m`, or `cog bump --annotated`.

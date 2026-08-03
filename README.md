@@ -25,3 +25,7 @@ The root `new.toml` marks this repository as a `new` template collection. Each t
 - Files ending in `.eta` are rendered with Eta and the `.eta` suffix is stripped.
 - File and directory names can use `{{ variable }}` interpolation.
 - Commands run from the generated project directory after rendering and before the initial git commit.
+
+## Releases
+
+Release tags must be lightweight tags. Create one with `git tag vX.Y.Z`; do not use `git tag -a`, `git tag -s`, `git tag -m`, or `cog bump --annotated`.
