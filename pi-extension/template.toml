@@ -29,13 +29,6 @@ default = "{{ projectName }}"
 required = true
 
 [[variables]]
-name = "extensionId"
-type = "string"
-prompt = "Pi extension id"
-default = "{{ projectName }}"
-required = true
-
-[[variables]]
 name = "authorName"
 type = "string"
 prompt = "Author name"

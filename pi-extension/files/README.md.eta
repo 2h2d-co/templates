@@ -5,7 +5,7 @@
 This is a Pi package. Its extension entrypoint is:
 
 ```txt
-extensions/<%= it.extensionId %>/index.ts
+extensions/index.ts
 ```
 
 ## Development
@@ -20,7 +20,7 @@ npm run pack:dry
 ## Try locally
 
 ```bash
-pi -e ./extensions/<%= it.extensionId %>/index.ts
+pi -e ./extensions/index.ts
 ```
 
 ## Release staging

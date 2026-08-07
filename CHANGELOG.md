@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+- Use `extensions/index.ts` for single-extension Pi packages so Pi displays only the package name.
 - Add Keep a Changelog guidance to generated changelogs.
 - Add `pack:dry` scripts and documentation to every npm package template.
 - Use the conventional `pi` parameter name in the command-free Pi extension starter.

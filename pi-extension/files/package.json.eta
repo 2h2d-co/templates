@@ -20,7 +20,7 @@
     "url": "git+https://github.com/<%= it.githubOwner %>/<%= it.repoName %>.git"
   },
   "files": [
-    "extensions/<%= it.extensionId %>/index.ts",
+    "extensions/index.ts",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
@@ -50,7 +50,7 @@
   },
   "pi": {
     "extensions": [
-      "./extensions/<%= it.extensionId %>/index.ts"
+      "./extensions/index.ts"
     ]
   }
 }
