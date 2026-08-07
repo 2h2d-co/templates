@@ -33,6 +33,7 @@
     "typecheck": "tsc -p tsconfig.json",
     "test": "node --test --test-concurrency=1 test/*.test.ts",
     "check": "hk check --all --check",
+    "pack:dry": "npm run build && npm pack --dry-run --allow-directory=all",
     "fmt": "oxfmt",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix"

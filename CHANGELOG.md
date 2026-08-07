@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add `pack:dry` scripts and documentation to every npm package template.
+- Use the conventional `pi` parameter name in the command-free Pi extension starter.
+- Start the generated Go changelog with an empty `Unreleased` section.
+
 - Add npm package-name validation and automatic `0.0.1-alpha.0` publication metadata to the TypeScript and Pi extension templates.
 - Remove the placeholder slash command and command-specific variables from the Pi extension template.
 - Start generated package changelogs with an empty `Unreleased` section.

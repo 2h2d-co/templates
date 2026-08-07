@@ -2,6 +2,7 @@
 
 - This project is a TypeScript ESM package.
 - Run `npm run check` and `npm test` before committing meaningful code changes.
+- Run `npm run pack:dry` to build and inspect the npm package contents before release.
 - Keep exports in `package.json` aligned with built files in `dist/`.
 - Use Conventional Commits and maintain `CHANGELOG.md` in Keep a Changelog style; add entries for `feat:` and `fix:` changes under `Unreleased`.
 - Release commits should update the package version, move `Unreleased` entries into the new release section, and use `release: v<version>` as the commit subject.
