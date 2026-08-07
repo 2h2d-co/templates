@@ -36,27 +36,6 @@ default = "{{ projectName }}"
 required = true
 
 [[variables]]
-name = "displayName"
-type = "string"
-prompt = "Display name"
-default = "{{ projectName }}"
-required = true
-
-[[variables]]
-name = "commandName"
-type = "string"
-prompt = "Pi slash command name"
-default = "{{ extensionId }}"
-required = true
-
-[[variables]]
-name = "commandDescription"
-type = "string"
-prompt = "Pi slash command description"
-default = "Show {{ displayName }} status"
-required = true
-
-[[variables]]
 name = "authorName"
 type = "string"
 prompt = "Author name"
@@ -82,18 +61,24 @@ prompt = "MIT licensor"
 default = "{{ system.defaults.licensor }}"
 required = true
 
+[npm]
+package_name = "{{ packageName }}"
+version = "0.0.1-alpha.0"
+tag = "alpha"
+access = "public"
+
 [[commands]]
 name = "Install development tools"
 run = "mise trust && mise install"
 
 [[commands]]
 name = "Install dependencies"
-run = "npm install"
+run = "mise exec -- npm install"
 
 [[commands]]
 name = "Typecheck"
-run = "npm run check"
+run = "mise exec -- npm run check"
 
 [[commands]]
 name = "Test"
-run = "npm test"
+run = "mise exec -- npm test"

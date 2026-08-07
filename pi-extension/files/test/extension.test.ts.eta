@@ -3,16 +3,8 @@ import test from "node:test";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import extension from "../extensions/<%= it.extensionId %>/index.ts";
 
-void test("registers the <%= it.commandName %> command", () => {
-  const commands: string[] = [];
-  const pi = {
-    registerCommand(name: string) {
-      commands.push(name);
-    },
-    on() {},
-  } as unknown as ExtensionAPI;
+void test("loads the extension", () => {
+  const pi = {} as ExtensionAPI;
 
-  extension(pi);
-
-  assert.deepEqual(commands, ["<%= it.commandName %>"]);
+  assert.doesNotThrow(() => extension(pi));
 });

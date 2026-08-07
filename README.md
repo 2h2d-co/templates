@@ -9,6 +9,11 @@ new --template-source 2h2d-co/templates go-cli my-go-tool
 new --template-source 2h2d-co/templates pi-extension my-pi-package
 ```
 
+The npm package templates (`ts`, `ts-cli`, and `pi-extension`) validate that the requested package
+name is available, authenticate with npm when needed, and publish `0.0.1-alpha.0` under the `alpha`
+tag after successful project creation. Pass `--no-npm-publish` to retain availability validation
+without publishing.
+
 The root `new.toml` marks this repository as a `new` template collection. Each template lives in a directory whose name is the template id.
 
 ## Templates

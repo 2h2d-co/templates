@@ -61,18 +61,24 @@ prompt = "MIT licensor"
 default = "{{ system.defaults.licensor }}"
 required = true
 
+[npm]
+package_name = "{{ packageName }}"
+version = "0.0.1-alpha.0"
+tag = "alpha"
+access = "public"
+
 [[commands]]
 name = "Install development tools"
 run = "mise trust && mise install"
 
 [[commands]]
 name = "Install dependencies"
-run = "npm install"
+run = "mise exec -- npm install"
 
 [[commands]]
 name = "Build"
-run = "npm run build"
+run = "mise exec -- npm run build"
 
 [[commands]]
 name = "Test"
-run = "npm test"
+run = "mise exec -- npm test"

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add npm package-name validation and automatic `0.0.1-alpha.0` publication metadata to the TypeScript and Pi extension templates.
+- Remove the placeholder slash command and command-specific variables from the Pi extension template.
+- Start generated package changelogs with an empty `Unreleased` section.
+- Run generated npm package setup commands inside their mise-managed tool environments.
+
 - Require lightweight release tags in generated documentation, agent instructions, hooks, and release validation.
 - Update shared project hooks to hk-config 0.4.0.
 
