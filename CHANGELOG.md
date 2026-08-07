@@ -1,7 +1,12 @@
 # Changelog
 
-## Unreleased
+All notable changes to this project will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [Unreleased]
+
+- Add Keep a Changelog guidance to generated changelogs.
 - Add `pack:dry` scripts and documentation to every npm package template.
 - Use the conventional `pi` parameter name in the command-free Pi extension starter.
 - Start the generated Go changelog with an empty `Unreleased` section.
