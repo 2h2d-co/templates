@@ -6,10 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Fixed
+### Security
 
-- Allow GitHub release creation when the signed tagged commit remains an ancestor of a newer `main`,
-  with validated manual retries for interrupted publication.
+- Restrict GitHub release creation to protected tag-push events while retaining signed release
+  commit and `main` ancestry validation.
 
 ## [0.1.0] - 2026-08-10
 
