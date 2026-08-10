@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
-- Allow GitHub release creation when the signed tagged commit remains an ancestor of a newer `main`.
+- Allow GitHub release creation when the signed tagged commit remains an ancestor of a newer `main`,
+  with validated manual retries for interrupted publication.
 
 ## [0.1.0] - 2026-08-10
 
