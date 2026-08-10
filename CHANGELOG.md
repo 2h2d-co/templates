@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+- Update the Pi extension template to `@earendil-works/pi-coding-agent` 0.84.1 and remove
+  vulnerabilities inherited from its 0.83.0 dependency tree.
 - Harden generated npm releases with a signed local package digest, exact package-content
   allowlists, separate read-only build and credentialed staging jobs, artifact attestations, and npm
   provenance.
