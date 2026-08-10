@@ -121,6 +121,7 @@ jobs:
             "repos/$GITHUB_REPOSITORY/git/ref/tags/$RELEASE_TAG" \
             --jq .object.sha)
           gh release create "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
             --generate-notes \
             --target "$tag_sha" \
             --verify-tag
