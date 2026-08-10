@@ -91,22 +91,26 @@ jobs:
           main_sha=$(gh api \
             "repos/$GITHUB_REPOSITORY/git/ref/heads/main" \
             --jq .object.sha)
-          if [[ $tag_type != commit || $tag_sha != "$GITHUB_SHA" ]]; then
-            echo "release tag no longer points directly to workflow commit $GITHUB_SHA" >&2
+          if [[ $tag_type != commit ]]; then
+            echo "release tag $RELEASE_TAG no longer points directly to a commit" >&2
+            exit 1
+          fi
+          if [[ $GITHUB_EVENT_NAME == push && $tag_sha != "$GITHUB_SHA" ]]; then
+            echo "release tag $RELEASE_TAG no longer points to workflow commit $GITHUB_SHA" >&2
             exit 1
           fi
           comparison=$(gh api \
-            "repos/$GITHUB_REPOSITORY/compare/$GITHUB_SHA...$main_sha" \
+            "repos/$GITHUB_REPOSITORY/compare/$tag_sha...$main_sha" \
             --jq .status)
           if [[ $comparison != identical && $comparison != ahead ]]; then
-            echo "release commit $GITHUB_SHA is no longer an ancestor of main" >&2
+            echo "release commit $tag_sha is no longer an ancestor of main" >&2
             exit 1
           fi
           verified=$(gh api \
-            "repos/$GITHUB_REPOSITORY/git/commits/$GITHUB_SHA" \
+            "repos/$GITHUB_REPOSITORY/git/commits/$tag_sha" \
             --jq .verification.verified)
           if [[ $verified != true ]]; then
-            echo "GitHub does not recognize release commit $GITHUB_SHA as signed" >&2
+            echo "GitHub does not recognize release commit $tag_sha as signed" >&2
             exit 1
           fi
       - name: Create GitHub release
