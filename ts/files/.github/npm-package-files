@@ -1,0 +1,7 @@
+CHANGELOG.md
+LICENSE
+README.md
+dist/index.d.ts
+dist/index.js
+package.json
+src/index.ts

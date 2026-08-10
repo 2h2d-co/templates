@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+- Harden generated npm releases with a signed local package digest, exact package-content
+  allowlists, separate read-only build and credentialed staging jobs, artifact attestations, and npm
+  provenance.
+- Add release signer policy, repository-wide code ownership, lifecycle-script suppression, and
+  post-generation protection setup documentation to every npm package template.
+
 - Use `extensions/index.ts` for single-extension Pi packages so Pi displays only the package name.
 - Add Keep a Changelog guidance to generated changelogs.
 - Add `pack:dry` scripts and documentation to every npm package template.

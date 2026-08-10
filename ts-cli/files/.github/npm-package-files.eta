@@ -1,0 +1,9 @@
+CHANGELOG.md
+LICENSE
+README.md
+bin/<%= it.binName %>.js
+dist/cli.js
+dist/core.js
+package.json
+src/cli.ts
+src/core.ts

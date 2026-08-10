@@ -14,6 +14,19 @@ name is available, authenticate with npm when needed, and publish `0.0.1-alpha.0
 tag after successful project creation. Pass `--no-npm-publish` to retain availability validation
 without publishing.
 
+Generated npm projects also include the hardened release flow used by 2H2D packages:
+
+- an exact `.github/npm-package-files` package-content allowlist;
+- a local release command that records the reproducible package SHA-256 in an SSH-signed commit;
+- a read-only build job separated from the environment-gated trusted-publishing job;
+- GitHub artifact attestation and npm provenance for the exact staged archive;
+- CODEOWNERS assigning every file to `@kaanozdokmeci`.
+
+After creating a repository, configure npm trusted publishing for
+`.github/workflows/publish.yml`, configure the tag-restricted `npm-publish` GitHub environment, and
+apply the repository branch and tag protection settings described in the generated README. These
+GitHub and npm server-side settings cannot be enforced by template files alone.
+
 The root `new.toml` marks this repository as a `new` template collection. Each template lives in a directory whose name is the template id.
 
 ## Templates
