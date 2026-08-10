@@ -17,4 +17,37 @@ make build
 
 ## Releases
 
-The GitHub Actions workflow publishes a release when a `v*` tag is pushed. Release tags must be lightweight tags. Create one with `git tag v<version>`; do not use `git tag -a`, `git tag -s`, `git tag -m`, or `cog bump --annotated`.
+Create a signed release commit and lightweight tag from clean, synchronized
+`main`:
+
+```sh
+scripts/release.sh 0.0.1-alpha.0
+git push --atomic origin main v0.0.1-alpha.0
+```
+
+The release command builds all four GoReleaser archives twice from the Git
+index, requires byte-for-byte reproducibility, and signs the canonical
+release-manifest digest in the release commit. Prereleases keep changelog
+entries under `Unreleased`; stable releases create a dated changelog section.
+
+The tag workflow validates and constructs artifacts in a read-only job, then
+transfers only the exact artifact ID to GitHub-owned attestation and
+publication jobs. Public repositories receive GitHub artifact attestations.
+The attestation job is skipped for private repositories whose plan does not
+support attestations; signed-manifest and publication revalidation remain
+enforced.
+
+After creating the GitHub repository:
+
+- configure `github-release` to allow only `v*` tags;
+- protect `main` with one code-owner approval, stale-review dismissal,
+  conversation resolution, linear history, and force-push/deletion blocking;
+- protect `v*` tags against creation, update, and deletion except for the
+  repository-administrator release path.
+
+Private repositories require a GitHub plan that supports these server-side
+branch, tag, and environment restrictions. The checked-in signed-release
+checks still apply when those plan features are unavailable.
+
+Do not create annotated or signed tag objects. Release tags must be
+lightweight tags pointing to the signed release commit.

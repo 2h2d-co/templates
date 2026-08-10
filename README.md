@@ -22,10 +22,22 @@ Generated npm projects also include the hardened release flow used by 2H2D packa
 - GitHub artifact attestation and npm provenance for the exact staged archive;
 - CODEOWNERS assigning every file to `@kaanozdokmeci`.
 
+Generated Go CLI projects include the hardened release flow used by 2H2D Go packages:
+
+- reproducible darwin/linux archives for amd64 and arm64 with normalized metadata;
+- a local release command that records the exact release-manifest SHA-256 in an SSH-signed commit;
+- a read-only validation/build job separated from GitHub-owned attestation and publication jobs;
+- exact artifact-ID transfer, archive-content allowlists, checksums, and publication-time revalidation;
+- conditional GitHub artifact attestations for public repositories and private-plan compatibility;
+- CODEOWNERS assigning every file to `@kaanozdokmeci`.
+
 After creating a repository, configure npm trusted publishing for
 `.github/workflows/publish.yml`, configure the tag-restricted `npm-publish` GitHub environment, and
 apply the repository branch and tag protection settings described in the generated README. These
 GitHub and npm server-side settings cannot be enforced by template files alone.
+
+Generated Go project READMEs likewise document the branch, tag, and `github-release` environment
+settings that must be configured after repository creation.
 
 The root `new.toml` marks this repository as a `new` template collection. Each template lives in a directory whose name is the template id.
 
