@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Generate projects with `@2h2d/oxlint-config` 0.1.0-alpha.2 and unused suppression
+  reporting.
 - Generate npm projects with Oxlint 1.78, Oxfmt 0.63, and `@2h2d/oxlint-config` 0.1.0-alpha.1.
 
 ### Fixed
