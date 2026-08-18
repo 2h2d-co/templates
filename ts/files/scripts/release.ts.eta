@@ -316,7 +316,7 @@ function isJsonValue(value: unknown): value is JsonValue {
 }
 
 function isJsonObject(value: unknown): value is JsonObject {
-  return isJsonValue(value) && value !== null && !Array.isArray(value);
+  return typeof value === "object" && isJsonValue(value) && value !== null && !Array.isArray(value);
 }
 
 function isPackFile(value: unknown): value is PackFile {

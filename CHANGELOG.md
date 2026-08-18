@@ -14,6 +14,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   environment controls.
 - Generate npm projects with the shared `@2h2d/oxlint-config` strict policy.
 
+### Changed
+
+- Generate npm projects with Oxlint 1.78, Oxfmt 0.63, and `@2h2d/oxlint-config` 0.1.0-alpha.1.
+
+### Fixed
+
+- Reject primitive JSON values where generated release scripts require package metadata objects.
+
 ### Security
 
 - Restrict GitHub release creation to protected tag-push events while retaining signed release
