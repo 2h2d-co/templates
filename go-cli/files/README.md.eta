@@ -37,17 +37,19 @@ The attestation job is skipped for private repositories whose plan does not
 support attestations; signed-manifest and publication revalidation remain
 enforced.
 
-After creating the GitHub repository:
+When `new` creates the GitHub repository, it automatically:
 
-- configure `github-release` to allow only `v*` tags;
 - protect `main` with one code-owner approval, stale-review dismissal,
   conversation resolution, linear history, and force-push/deletion blocking;
 - protect `v*` tags against creation, update, and deletion except for the
-  repository-administrator release path.
+  repository-administrator release path;
+- configure `github-release` to allow only `v*` tags without a deployment reviewer or
+  administrator bypass.
 
-Private repositories require a GitHub plan that supports these server-side
-branch, tag, and environment restrictions. The checked-in signed-release
-checks still apply when those plan features are unavailable.
+If repository creation was skipped with `--no-github`, configure these controls manually. Private
+repositories require a GitHub plan that supports these server-side branch, tag, and environment
+restrictions. The checked-in signed-release checks still apply when those plan features are
+unavailable.
 
 Do not create annotated or signed tag objects. Release tags must be
 lightweight tags pointing to the signed release commit.

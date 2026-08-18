@@ -32,11 +32,14 @@ command and both CI jobs. Update it whenever the intended published file set cha
 
 Repository setup:
 
-1. Configure npm trusted publishing for `<%= it.githubOwner %>/<%= it.repoName %>` using
+1. When `new` creates the GitHub repository, it automatically protects `main` and `v*` tags and
+   restricts `npm-publish` to `v*` tags without a deployment reviewer or administrator bypass.
+2. Configure npm trusted publishing for `<%= it.githubOwner %>/<%= it.repoName %>` using
    `.github/workflows/publish.yml` and the `npm-publish` environment.
-2. Restrict that GitHub environment to `v*` tags and require a reviewer.
-3. Protect `main` with code-owner review and protect `v*` tags from unauthorized changes.
-4. Replace `.github/release-signers` if release commits use a different SSH signing key.
+3. Replace `.github/release-signers` if release commits use a different SSH signing key.
+
+If repository creation was skipped with `--no-github`, configure the branch, tag, and environment
+controls manually.
 
 Release flow:
 
@@ -47,8 +50,8 @@ Release flow:
 3. Inspect the commit and tag, then push them atomically with
    `git push --atomic origin main vX.Y.Z`.
 4. A read-only CI job tests, packs, and inspects the package without publishing credentials.
-5. After approval in `npm-publish`, a separate credentialed job verifies the signed commit and exact
-   package digest before attesting and staging that archive through npm trusted publishing.
+5. A separate credentialed job verifies the signed commit and exact package digest before attesting
+   and staging that archive through npm trusted publishing.
 6. Approve the staged package on npmjs.com or with `npm stage approve <stage-id>`.
 
 Stable versions use `latest`; prereleases derive a non-`latest` dist-tag such as `alpha`, `beta`, or

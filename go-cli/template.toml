@@ -56,6 +56,9 @@ prompt = "MIT licensor"
 default = "{{ system.defaults.licensor }}"
 required = true
 
+[github]
+release_environment = "github-release"
+
 [[commands]]
 name = "Install development tools"
 run = "mise trust && mise install"

@@ -31,13 +31,13 @@ Generated Go CLI projects include the hardened release flow used by 2H2D Go pack
 - conditional GitHub artifact attestations for public repositories and private-plan compatibility;
 - CODEOWNERS assigning every file to `@kaanozdokmeci`.
 
-After creating a repository, configure npm trusted publishing for
-`.github/workflows/publish.yml`, configure the tag-restricted `npm-publish` GitHub environment, and
-apply the repository branch and tag protection settings described in the generated README. These
-GitHub and npm server-side settings cannot be enforced by template files alone.
+When `new` creates a repository, the templates automatically apply the shared `main` branch,
+administrator-only `v*` tag, and tag-restricted release-environment controls through the GitHub
+API. npm trusted publishing must still be connected to `.github/workflows/publish.yml` and the
+generated `npm-publish` environment after the initial package exists.
 
-Generated Go project READMEs likewise document the branch, tag, and `github-release` environment
-settings that must be configured after repository creation.
+Generated Go repositories receive the same branch and tag controls and a tag-restricted
+`github-release` environment.
 
 The root `new.toml` marks this repository as a `new` template collection. Each template lives in a directory whose name is the template id.
 

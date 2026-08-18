@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Generate Go CLI projects with a local SSH-signed release command and reproducible darwin/linux
   archives for amd64 and arm64.
+- Configure generated GitHub repositories with shared branch, release-tag, and tag-only release
+  environment controls.
+- Generate npm projects with the shared `@2h2d/oxlint-config` strict policy.
 
 ### Security
 

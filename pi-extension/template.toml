@@ -60,6 +60,9 @@ version = "0.0.1-alpha.0"
 tag = "alpha"
 access = "public"
 
+[github]
+release_environment = "npm-publish"
+
 [[commands]]
 name = "Install development tools"
 run = "mise trust && mise install"
