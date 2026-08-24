@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Generate TypeScript projects with the stable `@2h2d/oxlint-config` 0.1.0 ruleset.
 - Generate TypeScript projects with `@2h2d/oxlint-config` 0.1.0-alpha.12, inherit its complete
   strict configuration, and attach named rejection-handler diagnostics to Promise call sites.
 - Generate TypeScript projects with `@2h2d/oxlint-config` 0.1.0-alpha.6 so heuristic
