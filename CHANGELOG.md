@@ -16,6 +16,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Generate projects with hk-config 0.8.0, hk 1.56.0, and Betterleaks 1.8.1.
+- Generate TypeScript projects with `@2h2d/oxlint-config` 0.1.1, Oxlint 1.79, and Oxfmt 0.64.
+- Generate Pi packages against `@earendil-works/pi-coding-agent` 0.84.2.
 - Generate TypeScript projects with the shared `@2h2d/ts-config` compiler policy.
 - Generate TypeScript projects with the stable `@2h2d/oxlint-config` 0.1.0 ruleset.
 - Generate TypeScript projects with `@2h2d/oxlint-config` 0.1.0-alpha.12, inherit its complete
