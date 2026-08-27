@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Generate projects with hk-config 0.9.0.
+
 ### Security
 
 - Generate Go projects with gosec enabled through golangci-lint and a module-pinned govulncheck
