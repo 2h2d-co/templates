@@ -1,3 +1,4 @@
+// Package <%= it.goPackageName %> provides the <%= it.commandName %> command tree.
 package <%= it.goPackageName %>
 
 import (
