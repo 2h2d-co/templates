@@ -6,14 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Generate projects with default-branch CI for audits, checks, tests, and build or package
+  validation.
+
 ### Changed
 
 - Generate projects with hk-config 0.9.0.
+- Generate Go projects with Go 1.26.7 and golangci-lint 2.13.1.
+- Generate Pi packages against `@earendil-works/pi-coding-agent` 0.84.3 and allow its telemetry
+  package through the minimum-release-age policy.
 
 ### Security
 
 - Generate Go projects with gosec enabled through golangci-lint and a module-pinned govulncheck
   tool enforced by shared hk checks.
+- Generate Go projects with Go 1.26.7 to include the latest standard-library security fixes in the
+  1.26 release line.
 
 ## [0.2.0] - 2026-08-27
 
