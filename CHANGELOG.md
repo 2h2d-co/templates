@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- The Pi extension release workflow creates the immutable GitHub release for each tag from the verified archive, its checksum, and the version's changelog section.
 - Generate projects with default-branch CI for audits, checks, tests, and build or package
   validation.
 

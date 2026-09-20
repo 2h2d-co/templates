@@ -52,7 +52,9 @@ Release flow:
 4. A read-only CI job tests, packs, and inspects the package without publishing credentials.
 5. A separate credentialed job verifies the signed commit and exact package digest before attesting
    and staging that archive through npm trusted publishing.
-6. Approve the staged package on npmjs.com or with `npm stage approve <stage-id>`.
+6. A final job creates the immutable GitHub release for the tag from the same verified archive,
+   its checksum, and the version's `CHANGELOG.md` section (`Unreleased` for prereleases).
+7. Approve the staged package on npmjs.com or with `npm stage approve <stage-id>`.
 
 Stable versions use `latest`; prereleases derive a non-`latest` dist-tag such as `alpha`, `beta`, or
 `rc` from their first prerelease identifier.
