@@ -2,9 +2,11 @@ amends "package://github.com/2h2d-co/hk-config/releases/download/v0.11.0/hk-conf
 
 import "package://github.com/2h2d-co/hk-config/releases/download/v0.11.0/hk-config@0.11.0#/Base.pkl" as Base
 import "package://github.com/2h2d-co/hk-config/releases/download/v0.11.0/hk-config@0.11.0#/GitHubActions.pkl" as GitHubActions
+import "package://github.com/2h2d-co/hk-config/releases/download/v0.11.0/hk-config@0.11.0#/Shell.pkl" as Shell
 
 local projectSteps = (Base.baseSteps) {
   ...GitHubActions.gitHubActionsSteps
+  ...Shell.shellSteps
 }
 
 display_skip_reasons = Base.displaySkipReasons

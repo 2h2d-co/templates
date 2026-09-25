@@ -55,6 +55,8 @@ The root `new.toml` marks this repository as a `new` template collection. Each t
 - Files ending in `.eta` are rendered with Eta and the `.eta` suffix is stripped.
 - File and directory names can use `{{ variable }}` interpolation.
 - Commands run from the generated project directory after rendering and before the initial git commit.
+- `mise run test` generates every template into a temporary directory with the pinned `new` CLI and
+  runs each generated project's `mise run check`. `mise run check` and CI include it.
 
 ## Releases
 

@@ -19,4 +19,7 @@ This repository is a template collection for `@2h2d/new`.
 - Prefer declarative `template.toml` changes over custom setup code.
 - Declare each release environment in the template `[github]` block so `new` applies the shared
   branch, release-tag, and environment controls after repository creation.
-- Test a template by generating into a temporary directory before changing its setup commands.
+- Run `mise run test` after changing a template. It generates every template into a temporary
+  directory with the pinned `new` CLI and runs the generated project's `mise run check`. Pass
+  template ids, such as `scripts/test-templates.sh ts-cli`, to test a subset. `mise run check`
+  and CI run the full test.

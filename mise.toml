@@ -9,7 +9,15 @@ betterleaks = "1.8.1"
 cocogitto = "7.0.0"
 actionlint = "1.7.12"
 zizmor = "1.29.0"
+shfmt = "3.13.1"
+shellcheck = "0.11.0"
+node = "22.23.2"
+"npm:@2h2d/new" = "0.1.1-alpha.4"
 
 [tasks.check]
 description = "Run all non-writing project checks"
-run = ["hk validate", "hk check --all --check"]
+run = ["hk validate", "hk check --all --check", "scripts/test-templates.sh"]
+
+[tasks.test]
+description = "Generate every template and run each generated project's mise run check"
+run = "scripts/test-templates.sh"
