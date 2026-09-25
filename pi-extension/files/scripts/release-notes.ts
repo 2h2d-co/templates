@@ -80,7 +80,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const changelog = readFileSync(resolve(process.cwd(), "CHANGELOG.md"), "utf8");
   if (process.argv[2] === "--check") {
     // Pre-release gate: validate the section for the version in package.json.
-    const manifest: unknown = JSON.parse(readFileSync(resolve(process.cwd(), "package.json"), "utf8"));
+    const manifest: unknown = JSON.parse(
+      readFileSync(resolve(process.cwd(), "package.json"), "utf8"),
+    );
     const version =
       typeof manifest === "object" && manifest !== null && "version" in manifest
         ? manifest.version
@@ -99,6 +101,8 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       archiveDigest: required("ARCHIVE_DIGEST"),
     });
     writeFileSync(output, notes);
-    console.log(`Wrote release notes for ${required("PACKAGE_NAME")}@${required("PACKAGE_VERSION")}.`);
+    console.log(
+      `Wrote release notes for ${required("PACKAGE_NAME")}@${required("PACKAGE_VERSION")}.`,
+    );
   }
 }

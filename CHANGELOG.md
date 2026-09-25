@@ -20,6 +20,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Generate Pi packages against `@earendil-works/pi-coding-agent` 0.84.3 and allow its telemetry
   package through the minimum-release-age policy.
 
+### Fixed
+
+- Format the generated Pi extension `scripts/release-notes.ts` with oxfmt so project generation
+  passes its initial `npm run check`.
+
 ### Security
 
 - Generate Go projects with gosec enabled through golangci-lint and a module-pinned govulncheck
