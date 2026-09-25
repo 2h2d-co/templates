@@ -14,7 +14,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Generate projects with hk-config 0.9.0.
+- Generate projects with hk-config 0.11.0 and hk 2.0.1. Generated workflows pin mise 2026.9.11,
+  which installs hk 2 through the locked packslip backend.
 - Generate Go projects with Go 1.26.7 and golangci-lint 2.13.1.
 - Generate Pi packages against `@earendil-works/pi-coding-agent` 0.84.3 and allow its telemetry
   package through the minimum-release-age policy.
