@@ -23,6 +23,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- Format generated TypeScript and Pi extension projects with oxfmt during setup, so project names
+  that lengthen interpolated lines no longer fail the first formatting check.
 - Format the generated Pi extension `scripts/release-notes.ts` with oxfmt so project generation
   passes its initial `npm run check`.
 

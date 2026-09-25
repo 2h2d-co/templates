@@ -72,6 +72,10 @@ name = "Install dependencies"
 run = "mise exec -- npm install"
 
 [[commands]]
+name = "Format files"
+run = "mise exec -- npm run fmt"
+
+[[commands]]
 name = "Typecheck"
 run = "mise exec -- npm run check"
 
