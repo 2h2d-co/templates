@@ -18,3 +18,7 @@ _.path = ["{{config_root}}/node_modules/.bin"]
 [shell_alias]
 "pi:local" = "pi --no-extensions -e {{config_root}}"
 "pi:npm" = "pi --no-extensions -e npm:<%= it.packageName %>"
+
+[tasks.check]
+description = "Run all non-writing project checks"
+run = ["npm run check", "npm test", "npm run pack:dry"]

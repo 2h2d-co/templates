@@ -1,7 +1,7 @@
 # Agent Instructions
 
 - This project is a Go CLI using Cobra.
-- Run `go test ./...` before committing meaningful code changes.
+- Run `mise run check` before committing meaningful code changes. It runs `go mod verify`, race-enabled tests, `go build`, the shared hk checks, and `goreleaser check`.
 - Keep command behavior documented in `README.md`.
 - Use Conventional Commits and maintain `CHANGELOG.md` in Keep a Changelog style; add entries for `feat:` and `fix:` changes under `Unreleased`.
 - Create releases with `scripts/release.sh VERSION` from clean `main` synchronized with `origin/main`.

@@ -12,3 +12,13 @@ goreleaser = "2.17.1"
 lockfile = true
 locked = true
 minimum_release_age = "7d"
+
+[tasks.check]
+description = "Run all non-writing project checks"
+run = [
+  "go mod verify",
+  "go test -race -mod=readonly ./...",
+  "go build ./...",
+  "hk check --all --check",
+  "goreleaser check",
+]

@@ -2,7 +2,7 @@
 
 - This project is a Pi package with a TypeScript extension entrypoint.
 - Pi extensions run with full system permissions; keep side effects explicit and documented.
-- Run `npm run check` and `npm test` before committing meaningful code changes.
+- Run `mise run check` before committing meaningful code changes. It runs `npm run check`, `npm test`, and `npm run pack:dry`.
 - Run `npm run pack:dry` to inspect the npm package contents before release.
 - Keep `.github/npm-package-files` synchronized with every intentional package-content change; local release validation and both CI jobs enforce it exactly.
 - Use Conventional Commits and maintain `CHANGELOG.md` in Keep a Changelog style; add entries for `feat:` and `fix:` changes under `Unreleased`.

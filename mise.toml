@@ -9,3 +9,7 @@ betterleaks = "1.8.1"
 cocogitto = "7.0.0"
 actionlint = "1.7.12"
 zizmor = "1.29.0"
+
+[tasks.check]
+description = "Run all non-writing project checks"
+run = ["hk validate", "hk check --all --check"]
