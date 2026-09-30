@@ -19,8 +19,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   which installs hk 2 through the locked packslip backend.
 - Generate Go projects with Go 1.26.7 and golangci-lint 2.13.1.
 - Generate Pi packages against `@earendil-works/pi-coding-agent` 0.99.1 with the peer range
-  `>=0.99.1 <0.100.0`. The minimum-release-age policy allows its telemetry, MCP, and codemode
-  packages. Generated agent instructions support only the Pi version the package develops against.
+  `>=0.99.1 <0.100.0`. The minimum-release-age policy allows its telemetry, MCP, codemode, and
+  chord packages. Generated agent instructions support only the Pi version the package develops against.
   Generated CI audits production dependencies only until a Pi release ships brace-expansion
   5.0.12 or later, because Pi 0.99.1 pins a vulnerable development-only copy.
 
