@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Generate Go projects with Go 1.27.1 and hk-config 0.11.1. Go 1.27 binaries require macOS 13
   Ventura or later.
+- Generate Pi extension projects for Pi `>=1.0.1 <1.1.0` with the Pi 1.0.1 development
+  dependency. Their CI runs the full `npm audit` again, and their npm policy exempts
+  `@anthropic-ai/sdk`, which Pi AI pins exactly, from the minimum release age.
 
 ## [0.3.1] - 2026-10-03
 
