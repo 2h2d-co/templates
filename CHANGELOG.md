@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Generate projects with hk 2.2.0 and zizmor 1.30.1. Generated workflows pin `jdx/mise-action`
+  4.3.0 and mise 2026.9.14.
+- Generate TypeScript, TypeScript CLI, and Pi extension projects with Node.js 22.23.3, npm 11.20.0,
+  `@2h2d/oxlint-config` 0.1.2, Oxlint 1.85.0, `oxlint-tsgolint` 7.0.2003, oxfmt 0.70.0, and
+  `@types/node` 22.20.4. Their npm publishing jobs use Node.js 26.10.0 with npm 11.19.1.
+- Generate Go projects with Go 1.26.8, golangci-lint 2.14.0, GoReleaser 2.18.2, and
+  `golang.org/x/vuln` 1.8.0.
+
 ## [0.3.0] - 2026-09-30
 
 ### Added

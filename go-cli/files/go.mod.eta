@@ -1,10 +1,10 @@
 module <%= it.modulePath %>
 
-go 1.26.7
+go 1.26.8
 
 require (
 	github.com/spf13/cobra v1.10.2
-	golang.org/x/vuln v1.7.0
+	golang.org/x/vuln v1.8.0
 )
 
 tool golang.org/x/vuln/cmd/govulncheck
