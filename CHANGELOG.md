@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Generate Go projects with Go 1.27.1 and hk-config 0.11.1. Go 1.27 binaries require macOS 13
+  Ventura or later.
+
 ## [0.3.1] - 2026-10-03
 
 ### Changed
