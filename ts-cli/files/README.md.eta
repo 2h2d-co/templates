@@ -11,8 +11,8 @@
 ## Development
 
 ```bash
-npm install
-npm run check
+mise run init
+mise run check
 npm test
 npm run build
 npm run pack:dry

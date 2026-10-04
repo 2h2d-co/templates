@@ -14,7 +14,7 @@ extensions/index.ts
 
 ```bash
 mise run init
-npm run check
+mise run check
 npm test
 npm run pack:dry
 ```

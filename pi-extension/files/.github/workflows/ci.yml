@@ -40,7 +40,7 @@ jobs:
       - name: Check
         env:
           GH_TOKEN: ${{ github.token }}
-        run: npm run check
+        run: hk check --all --check
 
       - name: Test
         run: npm test

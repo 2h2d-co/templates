@@ -77,7 +77,7 @@ run = "mise exec -- npm run fmt"
 
 [[commands]]
 name = "Typecheck"
-run = "mise exec -- npm run check"
+run = "mise exec -- hk check --all --check"
 
 [[commands]]
 name = "Test"

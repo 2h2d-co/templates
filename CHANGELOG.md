@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Generated Pi extension projects provide `mise run init`, which installs the locked npm
   dependencies and the hk Git hooks. Their README and CI use it instead of `npm install` and
   `npm ci`.
+- Generate projects with hk-config 0.12.1, which fails a check when a required tool is missing
+  instead of skipping it. TypeScript projects no longer add `node_modules/.bin` to `PATH` or define a
+  `check` npm script; `mise run check` runs hk, the tests, `npm audit`, and the package dry run, and
+  `ts` and `ts-cli` projects get `mise run init`. Go projects declare `goimports` as a Go tool.
 
 ## [0.3.1] - 2026-10-03
 

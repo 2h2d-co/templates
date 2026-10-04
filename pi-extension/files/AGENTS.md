@@ -5,7 +5,7 @@
 - Support only the Pi version the package is developed and validated against. When adopting a new
   Pi release, raise the Pi peer minimum to it and remove fallbacks, feature detection, and tests
   that exist only for older Pi runtimes.
-- Run `mise run check` before committing meaningful code changes. It runs `npm run check`, `npm test`, and `npm run pack:dry`.
+- Run `mise run check` before committing meaningful code changes. It runs `hk check --all --check`, `npm test`, `npm audit`, and `npm run pack:dry`.
 - Run `npm run pack:dry` to inspect the npm package contents before release.
 - Keep `.github/npm-package-files` synchronized with every intentional package-content change; local release validation and both CI jobs enforce it exactly.
 - Use Conventional Commits and maintain `CHANGELOG.md` in Keep a Changelog style; add entries for `feat:` and `fix:` changes under `Unreleased`.
