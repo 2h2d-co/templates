@@ -13,7 +13,7 @@ extensions/index.ts
 ## Development
 
 ```bash
-npm install
+mise run init
 npm run check
 npm test
 npm run pack:dry

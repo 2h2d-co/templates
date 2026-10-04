@@ -22,3 +22,7 @@ _.path = ["{{config_root}}/node_modules/.bin"]
 [tasks.check]
 description = "Run all non-writing project checks"
 run = ["npm run check", "npm test", "npm run pack:dry"]
+
+[tasks.init]
+description = "Install locked dependencies and Git hooks"
+run = ["npm ci --ignore-scripts", "hk install --mise"]
