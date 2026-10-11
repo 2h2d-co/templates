@@ -23,8 +23,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
-- Generate projects with hk-config 0.13.1. In TypeScript, TypeScript CLI, and Pi extension projects,
-  the Oxlint hook step no longer fails when Oxlint ignore patterns exclude every selected file.
+- Generate projects with hk 2.5.0 and hk-config 0.14.0. In TypeScript, TypeScript CLI, and Pi
+  extension projects, the Oxlint hook step no longer fails when Oxlint ignore patterns exclude every
+  selected file. In every project, the large-file and case-conflict checks also cover binary files.
 
 ## [0.3.1] - 2026-10-03
 
