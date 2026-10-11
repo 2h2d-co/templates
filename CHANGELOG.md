@@ -21,6 +21,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `check` npm script; `mise run check` runs hk, the tests, `npm audit`, and the package dry run, and
   `ts` and `ts-cli` projects get `mise run init`. Go projects declare `goimports` as a Go tool.
 
+### Fixed
+
+- Generate projects with hk-config 0.13.1. In TypeScript, TypeScript CLI, and Pi extension projects,
+  the Oxlint hook step no longer fails when Oxlint ignore patterns exclude every selected file.
+
 ## [0.3.1] - 2026-10-03
 
 ### Changed
