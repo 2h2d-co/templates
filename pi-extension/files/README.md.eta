@@ -2,7 +2,7 @@
 
 <%= it.description %>
 
-Requires Pi `>=1.0.1 <1.1.0`.
+Requires Pi `>=1.1.0 <1.2.0`.
 
 This is a Pi package. Its extension entrypoint is:
 
