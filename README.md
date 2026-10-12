@@ -11,8 +11,9 @@ new --template-source 2h2d-co/templates pi-extension my-pi-package
 
 The npm package templates (`ts`, `ts-cli`, and `pi-extension`) validate that the requested package
 name is available, authenticate with npm when needed, and publish `0.0.1-alpha.0` under the `alpha`
-tag after successful project creation. Pass `--no-npm-publish` to retain availability validation
-without publishing.
+tag after successful project creation. Publication requires a macOS terminal; `new` opens npm's
+authentication prompts in the browser and does not print their links. Pass `--no-npm-publish` to
+retain availability validation without publishing.
 
 Generated npm projects also include the hardened release flow used by 2H2D packages:
 
