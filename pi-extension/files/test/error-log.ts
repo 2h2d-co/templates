@@ -2,6 +2,7 @@ import type { TestContext } from "node:test";
 
 // Words that classify a failed response without quoting it.
 const CATEGORIES = [
+  "abort",
   "overloaded",
   "rate limit",
   "usage limit",
