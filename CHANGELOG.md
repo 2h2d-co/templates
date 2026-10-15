@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Generated Pi extension projects include `test/error-log.ts`. Live tests use it to report every
+  extension error or warning notice, extension error, and failed response as a test diagnostic,
+  without provider error text or credentials. Their `AGENTS.md` requires it.
+
 ## [0.3.2] - 2026-10-15
 
 ### Changed
