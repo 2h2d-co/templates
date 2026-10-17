@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   diagnostic, without provider error text or credentials. Their `AGENTS.md` requires it and keeps
   tests in `test/*.test.ts`, test helpers in `test/support/`, and test data in `test/fixtures/`.
 
+### Changed
+
+- Generate Pi extension projects for Pi `>=1.3.0 <1.4.0` with the Pi 1.3.0 development
+  dependency.
+
 ## [0.3.2] - 2026-10-15
 
 ### Changed
