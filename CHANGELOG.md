@@ -12,7 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   compromised. Every template pins hk 2.8.0 with hk-config 0.15.0 and installs mise 2026.10.17 in
   CI. TypeScript, TypeScript CLI, and Pi extension projects pin Node.js 22.23.4 and npm 11.21.0, and
   their publish workflows stage packages with Node.js 26.12.1 and its bundled npm 11.20.0. Go CLI
-  projects use Go 1.27.3.
+  projects use Go 1.27.3. Every generated Ubuntu workflow job first disables the emSign ECC Root
+  CA - G3 and AAA Certificate Services roots, because GitHub-hosted runner images still trust them.
 
 ## [0.3.3] - 2026-10-17
 
