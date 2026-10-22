@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Generated projects no longer trust the eMudhra intermediate CAs whose private keys were
+  compromised. Every template pins hk 2.8.0 with hk-config 0.15.0 and installs mise 2026.10.17 in
+  CI. TypeScript, TypeScript CLI, and Pi extension projects pin Node.js 22.23.4 and npm 11.21.0, and
+  their publish workflows stage packages with Node.js 26.12.1 and its bundled npm 11.20.0. Go CLI
+  projects use Go 1.27.3.
+
 ## [0.3.3] - 2026-10-17
 
 ### Added
