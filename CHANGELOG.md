@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Generate Pi extension projects for Pi `>=1.4.0 <1.5.0` with the Pi 1.4.0 development
+  dependency.
+
 ### Fixed
 
 - Generated projects no longer trust the eMudhra intermediate CAs whose private keys were
