@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Generate Pi extension projects for Pi `>=1.4.0 <1.5.0` with the Pi 1.4.0 development
   dependency.
+- Generated projects lint GitHub Actions workflows with jactionlint 2.3.0 through hk-config
+  0.16.0, in place of actionlint. Generated CI jobs set `timeout-minutes: 10`, which jactionlint's
+  default profile requires.
 
 ### Fixed
 
