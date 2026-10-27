@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   default profile requires.
 - Generated Go CLI projects run CI as separate `Test` and `Lint` jobs. Every generated README
   names the CI checks to require on `main`, because `new` doesn't add required status checks.
+- Generated CI installs mise 2026.10.18.
 
 ### Fixed
 
