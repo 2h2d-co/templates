@@ -14,8 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate:
-    name: Validate
+  test:
+    name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -42,7 +42,48 @@ jobs:
       - name: Set up tools
         uses: jdx/mise-action@7a4e45a543138629540c9a1616d08632b893e492 # v5.0.1
         with:
-          version: "2026.10.17"
+          version: "2026.10.18"
+          install_args: --locked
+          cache: false
+
+      - name: Download modules
+        run: go mod download
+
+      - name: Test
+        run: go test ./...
+
+      - name: Build
+        run: go build ./...
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Distrust compromised eMudhra CA roots
+        # Temporary until GitHub-hosted runner images ship the fixed ca-certificates
+        # package (actions/runner-images#15018). Debian's fixed package disables the same roots.
+        run: |
+          sudo sed -i -e 's|^mozilla/emSign_ECC_Root_CA_-_G3.crt|!&|' -e 's|^mozilla/Comodo_AAA_Services_root.crt|!&|' /etc/ca-certificates.conf
+          sudo update-ca-certificates --fresh >/dev/null
+          # PEM lines unique to emSign ECC Root CA - G3 and AAA Certificate Services.
+          for needle in RzMwHhcNMTgwMjE4MTgzMDAwWhcNNDMwMjE4MTgzMDAwWjBrMQswCQYDVQQGEwJJ YXRlIFNlcnZpY2VzMB4XDTA0MDEwMTAwMDAwMFoXDTI4MTIzMTIzNTk1OVowezEL; do
+            if grep -qF "$needle" /etc/ssl/certs/ca-certificates.crt; then
+              echo "A compromised eMudhra root is still trusted" >&2
+              exit 1
+            fi
+          done
+
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up tools
+        uses: jdx/mise-action@7a4e45a543138629540c9a1616d08632b893e492 # v5.0.1
+        with:
+          version: "2026.10.18"
           install_args: --locked
           cache: false
 
@@ -56,9 +97,3 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: hk check --all --check
-
-      - name: Test
-        run: go test ./...
-
-      - name: Build
-        run: go build ./...

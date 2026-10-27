@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Generated projects lint GitHub Actions workflows with jactionlint 2.3.0 through hk-config
   0.16.0, in place of actionlint. Generated CI jobs set `timeout-minutes: 10`, which jactionlint's
   default profile requires.
+- Generated Go CLI projects run CI as separate `Test` and `Lint` jobs. Every generated README
+  names the CI checks to require on `main`, because `new` doesn't add required status checks.
 
 ### Fixed
 

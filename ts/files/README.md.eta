@@ -30,6 +30,9 @@ Repository setup:
 If repository creation was skipped with `--no-github`, configure the branch, tag, and environment
 controls manually.
 
+`new` doesn't add required status checks. After CI passes once on `main` and once on a pull
+request, require the `Validate` check for `main`.
+
 Release flow:
 
 1. Run `npm run release -- X.Y.Z` from a clean, synchronized `main`.
