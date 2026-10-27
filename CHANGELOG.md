@@ -23,6 +23,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   projects use Go 1.27.3 and GoReleaser 2.19.0, the first GoReleaser release built with it. Every
   generated Ubuntu workflow job first disables the emSign ECC Root CA - G3 and AAA Certificate
   Services roots, because GitHub-hosted runner images still trust them.
+- Generated Pi extension projects override undici to 8.12.2. Pi 1.4.0 depends on undici 8.10.2,
+  which has advisories GHSA-4qv8-2p9j-2685, GHSA-f72v-6w45-q472 and GHSA-xjj6-f33q-929c, so
+  `npm audit` failed in new projects.
 
 ## [0.3.3] - 2026-10-17
 
