@@ -52,7 +52,7 @@ restrictions. The checked-in signed-release checks still apply when those plan f
 unavailable.
 
 `new` doesn't add required status checks. After CI passes once on `main` and once on a pull
-request, require the `Test` and `Lint` checks for `main`.
+request, require the `Test`, `Lint` and `Online workflow audit` checks for `main`.
 
 Do not create annotated or signed tag objects. Release tags must be
 lightweight tags pointing to the signed release commit.

@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Generated projects include a `Workflow audit` workflow. Its `Online workflow audit` job runs
+  Zizmor's online audits on pull requests, pushes to `main`, a daily schedule and manual dispatch.
+
 ### Changed
 
 - Generate Pi extension projects for Pi `>=1.4.0 <1.5.0` with the Pi 1.4.0 development

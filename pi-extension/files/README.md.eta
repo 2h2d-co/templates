@@ -44,7 +44,7 @@ If repository creation was skipped with `--no-github`, configure the branch, tag
 controls manually.
 
 `new` doesn't add required status checks. After CI passes once on `main` and once on a pull
-request, require the `Validate` check for `main`.
+request, require the `Validate` and `Online workflow audit` checks for `main`.
 
 Release flow:
 
