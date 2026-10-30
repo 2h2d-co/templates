@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Generated projects pin hk 2.10.0 with hk-config 0.19.0. Their `pre-commit` hook keeps hk's
+  recommended `fix = true` and `stash = "git"`. Hook steps now skip a nested repository that has no
+  hk config of its own.
+
 ## [0.4.0] - 2026-10-27
 
 ### Added
