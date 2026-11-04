@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Generate Pi extension projects for Pi `>=1.5.0 <1.6.0` with the Pi 1.5.0 development
+  dependency. Generated `.npmrc` files exempt `@earendil-works/pi-schema`, a new Pi package, from
+  the release-age gate, and exempt `minimatch` and `@isaacs/nonrecursive-glob-match`, which Pi
+  1.5.0 needs for the GHSA-g3hv-75wg-m249 fix. Generated `package.json` files no longer override
+  undici, because Pi 1.5.0 depends on undici 8.12.3.
 - Generated projects pin hk 2.10.0 with hk-config 0.19.0. Their `pre-commit` hook keeps hk's
   recommended `fix = true` and `stash = "git"`. Hook steps now skip a nested repository that has no
   hk config of its own.
