@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Security
+
+- TypeScript, TypeScript CLI, and Pi extension projects pin npm 11.21.2. npm 11.21.0 bundles
+  undici 6.29.0, which has the 2026-10-15 advisories, including GHSA-2m5v-pch6-74hx; npm 11.21.2
+  bundles undici 6.29.1.
+
 ### Changed
 
 - Generate Pi extension projects for Pi `>=1.5.0 <1.6.0` with the Pi 1.5.0 development
