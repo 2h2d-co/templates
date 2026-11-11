@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Security
 
+- TypeScript, TypeScript CLI, and Pi extension projects pin Node.js 22.23.5, and their publish
+  workflows stage packages with Node.js 26.13.1, which still bundles npm 11.20.0. Both are the
+  2026-11-11 Node.js security releases (for example CVE-2026-123863 and CVE-2026-126051).
+- Go CLI projects pin Go 1.27.4, which fixes CVE-2026-97033 to CVE-2026-97043 and CVE-2026-97054.
 - TypeScript, TypeScript CLI, and Pi extension projects pin npm 11.21.2. npm 11.21.0 bundles
   undici 6.29.0, which has the 2026-10-15 advisories, including GHSA-2m5v-pch6-74hx; npm 11.21.2
   bundles undici 6.29.1.
