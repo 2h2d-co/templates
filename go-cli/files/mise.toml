@@ -5,8 +5,8 @@ cocogitto = "7.0.0"
 jactionlint = "2.6.0"
 zizmor = "1.32.0"
 go = "1.27.4"
-golangci-lint = "2.14.0"
-goreleaser = "2.19.0"
+golangci-lint = "2.15.0"
+goreleaser = "2.20.2"
 
 [settings]
 lockfile = true
