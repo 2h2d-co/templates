@@ -25,6 +25,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Generated projects pin hk 2.13.0 with hk-config 0.20.0, Betterleaks 1.10.1, jactionlint 2.6.0,
   and zizmor 1.32.0. Their `pre-commit` hook keeps hk's recommended `fix = true` and
   `stash = "git"`. Hook steps now skip a nested repository that has no hk config of its own.
+- Go CLI projects pin golangci-lint 2.15.0 and GoReleaser 2.20.2, and require
+  golang.org/x/tools 0.52.0 and golang.org/x/vuln 1.9.0 for goimports and govulncheck.
 
 ## [0.4.0] - 2026-10-27
 
