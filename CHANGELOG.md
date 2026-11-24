@@ -29,6 +29,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   golang.org/x/tools 0.52.0 and golang.org/x/vuln 1.9.0 for goimports and govulncheck.
 - TypeScript, TypeScript CLI, and Pi extension projects generate @2h2d/oxlint-config 0.1.3 with
   Oxlint 1.94.0 and oxlint-tsgolint 7.0.2007, oxfmt 0.79.0, and @types/node 22.20.5.
+- Generated CI, workflow audit, release, and publish workflows install mise 2026.11.8 with
+  mise-action 5.2.9.
 
 ## [0.4.0] - 2026-10-27
 
