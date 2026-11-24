@@ -22,9 +22,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   dependency. Generated `.npmrc` files exempt `@earendil-works/pi-schema`, a new Pi package, and
   `openai`, which Pi AI pins exactly, from the release-age gate. Generated `package.json` files no
   longer override undici, because Pi 1.6.0 depends on undici 8.12.4.
-- Generated projects pin hk 2.10.0 with hk-config 0.19.0. Their `pre-commit` hook keeps hk's
-  recommended `fix = true` and `stash = "git"`. Hook steps now skip a nested repository that has no
-  hk config of its own.
+- Generated projects pin hk 2.13.0 with hk-config 0.20.0, Betterleaks 1.10.1, jactionlint 2.6.0,
+  and zizmor 1.32.0. Their `pre-commit` hook keeps hk's recommended `fix = true` and
+  `stash = "git"`. Hook steps now skip a nested repository that has no hk config of its own.
 
 ## [0.4.0] - 2026-10-27
 
