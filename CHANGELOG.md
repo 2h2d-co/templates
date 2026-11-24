@@ -27,6 +27,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `stash = "git"`. Hook steps now skip a nested repository that has no hk config of its own.
 - Go CLI projects pin golangci-lint 2.15.0 and GoReleaser 2.20.2, and require
   golang.org/x/tools 0.52.0 and golang.org/x/vuln 1.9.0 for goimports and govulncheck.
+- TypeScript, TypeScript CLI, and Pi extension projects generate @2h2d/oxlint-config 0.1.3 with
+  Oxlint 1.94.0 and oxlint-tsgolint 7.0.2007, oxfmt 0.79.0, and @types/node 22.20.5.
 
 ## [0.4.0] - 2026-10-27
 
