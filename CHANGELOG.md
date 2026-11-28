@@ -18,7 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Generate Pi extension projects for Pi `>=1.6.1 <1.7.0` with the Pi 1.6.1 development
+- Generate Pi extension projects for Pi `>=1.7.0 <1.8.0` with the Pi 1.7.0 development
   dependency. Generated `.npmrc` files exempt `@earendil-works/pi-schema`, a new Pi package, and
   `openai`, which Pi AI pins exactly, from the release-age gate. Generated `package.json` files no
   longer override undici, because Pi 1.6.0 and later depend on undici 8.12.4.
